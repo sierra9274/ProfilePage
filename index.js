@@ -7,4 +7,4 @@ let age = 10;
 //     console.log("not very good")
 // }
 
-document.write(age)
+// document.write(age)
