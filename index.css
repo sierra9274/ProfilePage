@@ -10,8 +10,14 @@
 }
 body{
     font-family: 'poppins',sans-serif;
-    background: linear-gradient(90deg, #33383C 32%, #ffffff 10%);
+    /* background: linear-gradient(160deg, #6713b5 20%, #8727bac2 20%); */
     margin: auto;
+    /* backdrop-filter:blur(50px); */
+  padding: 0;
+  background: linear-gradient(90deg,#2980b9 30%,#8e44ad 30%);
+  height: 100vh;
+  overflow: hidden;
+    
 }
 
 /* navbar */
@@ -19,24 +25,32 @@ header{
     padding: 1.7rem;
     display: flex;
     justify-content: space-around;
-    background-color: transparent;
-    align-content: center;
+    /* background-color: transparent; */
+    /* align-content: center; */
+    /* overscroll-behavior: contain; */
+    /* position:sticky; */
 }
-.logo a{
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-decoration:none;
+.logo {
+    overflow: hidden;
 }
 nav{
     z-index: 1;
 }
+
 nav a{
     color: #33383c;
     text-decoration: none;
     font-size: 0.97rem;
     font-weight: 600;
     padding: 0.4rem 1.3rem;
+    /* flex:content; */
+    mix-blend-mode: difference;
+    /* overscroll-behavior:contain; */
+    
+}
+.nav:hover{
+    color: rgb(255, 255, 255);
+    
 }
 #click{
     display: none;
@@ -52,20 +66,22 @@ section{
 .main{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5rem auto;
+    justify-content: flex-start;
+    align-items:flex-start;
+    /* margin: 5rem auto; */
+    height: calc(100vh-75px);
 }
 .main h1{
     font-size: 2.5rem;
     font-weight: 600;
-     color: #33383C;
+    color: #2f3438;
 }
 .information{
     display:flex;
     flex-direction: column;
-    align-items: end;
-    margin: auto;
+    align-items:flex;
+    margin-right:20px;
+    margin-left: 140px;
 }
 .social{
     display: flex;
@@ -76,7 +92,7 @@ section{
 .social a{
     color: var(--secondary-color);
     font-size: 1rem;
-    /* border: 1px solid #33383C; Remove this after completion of logo */
+    /*border: 1px solid #33383C; Remove this after completion of logo */
     border-radius: 50%;
     padding: 0.3rem;
     text-align: center;
@@ -89,19 +105,25 @@ section{
 .logo_linkedin{
     position:absolute;
     margin: auto;
-    padding: 10px;
+    /* padding: 10px; */
+    border-radius: 50%;
 }
 .logo_insta{
     position: absolute;
     margin: auto;
-    padding: 10px;
+    border-radius: 30%;
+    /* padding: 10px; */
 }
 .logo_x{
     position: absolute;
     margin: auto;
+    border-radius: 50%;
 }
 .logo_github{
     position: absolute;
+    margin:auto;
+    overflow:hidden;
+    border-radius: 50%; /*abe ye image badal*/
 }
 
 .social a:hover{
@@ -124,8 +146,8 @@ section{
     width: 24rem;
     height: 25rem;
     border-radius: 50%;
-    background: #33383C;
-    display: grid;
+    background:linear-gradient(90deg,#2980b9,#8e44ad 100%);
+    display:grid;
     place-items: center;
 }
 .white_bg{
@@ -149,6 +171,15 @@ section{
     border-radius: 50%;
 
 }
+/* for all images on hover */
+img:hover {
+    transform: translateY(-5%) scale(1.2);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+img{
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, opacity 0.3s ease;
+}
 
 /* for button */
 .cv_btn{
@@ -171,7 +202,7 @@ section{
     -webkit-background-clip: text;
     background-clip: none;
     background-position: -500px 0;
-    animation: backcolor 5s normal forwards ease-in-out;
+    animation: backcolor 3.5s normal forwards ease-in-out;
 }
 @keyframes backcolor{
     100%{
@@ -271,3 +302,54 @@ section{
         width: 100%;
     }
 }
+
+/* Skills Card */
+.skills-card {
+    position: absolute;
+    top: 50%;
+    right: 10rem;
+    transform: translateY(-50%);
+    width: 200px;
+    padding: 1rem;
+    background-color:transparent;
+    border: 2px solid #33383C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    
+}
+
+.skills-card {
+    /* opacity: 1; */
+    /* visibility: visible; */
+    animation: popIn 1s ease forwards;
+    border-radius: 10px;
+}
+
+.skills-card:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+/* 
+@keyframes popIn {
+    0% {
+        transform: translateY(-50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popOut {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%) scale(0.8);
+        opacity: 0;
+    }
+} */
